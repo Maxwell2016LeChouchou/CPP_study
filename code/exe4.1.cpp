@@ -14,24 +14,38 @@ using namespace std;
 class Cube
 {
 
-    Cube(float h, float w, float l)
-    {
-        m_H = h;
-        m_W = w;
-        m_L = l;     
-    }
+    // Cube(float h, float w, float l)
+    // {
+    //     m_H = h;
+    //     m_W = w;
+    //     m_L = l;     
+    // }
 
 public:
 
+    void set_mH(float h)
+    {
+        m_H = h;
+    }
+    
     float get_mH()
     {
         return m_H;
     }
 
+    void set_mW(float w)
+    {
+        m_W= w;
+    }
 
     float get_mW()
     {
         return m_W;
+    }
+
+    void set_mL(float l)
+    {
+        m_L = l;
     }
 
     float get_mL()
@@ -59,33 +73,19 @@ bool same(Cube c1, Cube c)
 
 int main()
 {
-    Cube c(1,2,3);
-
-    vector<vector<float>> arr_l; 
-    
-    // find area of the cube
-    float area =  2*c.get_mH()*c.get_mL() + 2*c.get_mH()*c.get_mW() +  2*c.get_mW()*c.get_mL();
-
-    cout << "The area of the cube: " << area << endl; 
-
-    //find volume of the cube
-    float volume = c.get_mH()*c.get_mL() *c.get_mW();
-
-    cout << "The volume of the cube: " << volume << endl;
-
+  
     Cube c1;
-    cout << "Please input length of the cube: " << endl;
+    cout << "Please input length of the cube1: " << endl;
     float l1;
-    cin >> arr_l[0][] // 这里可以用for循环存数组;
-    c1.set_mL(arr_l(0));
-    c.set_mL(arr_l(1));
+    cin >> l1;
+    c1.set_mL(l1);
 
-    cout << "Please input width of the cube: " << endl;
+    cout << "Please input width of the cube1: " << endl;
     float w1;
     cin >> w1;
     c1.set_mW(w1);
     
-    cout  << "Please input height of the cube: " << endl;
+    cout  << "Please input height of the cube1: " << endl;
     float h1;
     cin >> h1;
     c1.set_mH(h1);
@@ -100,8 +100,35 @@ int main()
 
     cout << "The volume of the cube1: " << volume1 << endl;
 
-    same(c, c1);
-    cout << same(c, c1) << endl;
+
+    Cube c2;
+    cout << "Please input length of the cube2: " << endl;
+    float l2;
+    cin >> l2;
+    c2.set_mL(l2);
+
+    cout << "Please input width of the cube2: " << endl;
+    float w2;
+    cin >> w2;
+    c2.set_mW(w2);
+
+    cout << "Please input the height of the cube2: " << endl;
+    float h2;
+    cin >> h2;
+    c2.set_mH(h2);
+
+     // find area of the cube
+    float area2 =  2*c2.get_mH()*c2.get_mL() + 2*c2.get_mH()*c2.get_mW() +  2*c2.get_mW()*c2.get_mL();
+
+    cout << "The area of the cube1: " << area2 << endl; 
+
+    //find volume of the cube
+    float volume2 = c2.get_mH()*c2.get_mL() *c2.get_mW();
+
+    cout << "The volume of the cube1: " << volume2 << endl;
+
+    same(c1, c2);
+    cout << same(c1, c2) << endl;
 
     return 0;
 
