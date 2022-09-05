@@ -10,8 +10,47 @@ class Person
 {
 
 public:
+    void setName(string name)
+    {
+        m_Name = name;
+    }
+    string getName()
+    {
+        return m_Name;
+    }
+
+    void setAge(int age)
+    {
+        m_Age = age;
+    }
+    int getAge()
+    {
+        return  m_Age;
+    }
+
+    void setLover(string lover)
+    {
+        m_Lover = lover;
+    }
 
 private:
+    string m_Name;
+    int m_Age;
+    string m_Lover;
 
+};
 
+int main()
+{
+    Person p; 
+    p.setName("Jianzhou");
+    cout << "Name of the Candidate: " << p.getName() << endl;
+
+    p.setAge(30);
+    cout << "Age of the Candidate: " << p.getAge() << endl;
+
+    p.setLover("Lina");
+
+    return 0;
 }
+
