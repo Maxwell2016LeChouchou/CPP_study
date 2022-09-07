@@ -29,14 +29,39 @@ using namespace std;
 
 class Person
 {
+
 public:
+
     Person(int age)
     {
-        this->age = age;  //this -> age 指向的是下面 静态成员函数 int age
+        this->age = age;
     }
 
-    Person& PersonAddPerson()
+    Person& AddPerson(Person p)
+    {
+        this->age += p.age;
+        return *this;
+    }
 
     int age;
+};
 
+void test01()
+{
+    Person p1(10);
+    cout << "p1 age is " << p1.age << endl;
+
+    Person p2(15);
+    cout << p2.age << endl;
+    p2.AddPerson(p1);
+    cout << p2.age << endl;
+    p2.AddPerson(p1).AddPerson(p2);
+    cout << "p2 age is " << p2.age << endl;
+
+}
+
+int main()
+{
+    test01();
+    return 0;
 }
