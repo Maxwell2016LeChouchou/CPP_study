@@ -55,6 +55,8 @@ void test01()
     cout << person.m_A << endl;
     person.m_B = 10;
     person.func();
+    cout << person.m_A << endl;
+    cout << person.m_B << endl;
     person.ShowPerson();
     cout << person.m_B << endl;
 }
