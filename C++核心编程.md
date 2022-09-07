@@ -2127,7 +2127,7 @@ public:
 	void ShowPerson() const {
 		//const Type* const pointer;
 		//this = NULL; //不能修改指针的指向 Person* const this;
-		//this->mA = 100; //但是this指针指向的对象的数据是可以修改的
+		//this->m_A = 100; //但是this指针指向的对象的数据是可以修改的
 
 		//const修饰成员函数，表示指针指向的内存空间的数据不能修改，除了mutable修饰的变量
 		this->m_B = 100;

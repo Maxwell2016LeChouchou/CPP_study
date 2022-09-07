@@ -44,9 +44,18 @@ void test01()
     Person p1(10);
     cout << "p1 age " << p1.age << endl;
 
-    Person p2(20);
+    Person p2(15);
     p2.AddPerson(p1).AddPerson(p2);
-
     cout << "p2 age " << p2.age << endl;
+    
+    Person p3(25);
+    p3.AddPerson(p2); 
+    cout << "p3 age " << p3.age << endl;
 
+}
+
+int main()
+{
+    test01();
+    return 0;
 }
