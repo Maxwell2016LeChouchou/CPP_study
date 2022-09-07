@@ -32,7 +32,7 @@ public:
     {
         //const Type* const pointer;
 		//this = NULL; //不能修改指针的指向 Person* const this;
-		this->m_A = 100; //但是this指针指向的对象的数据是可以修改的
+		this->m_C = 10; //但是this指针指向的对象的数据是可以修改的
 
 		//const修饰成员函数，表示指针指向的内存空间的数据不能修改，除了mutable修饰的变量
         this->m_B = 100;
@@ -40,11 +40,12 @@ public:
     }
 
     void func() const{
-        this->m_A = 1000; // 没有用mutable则无法修改
+        // this->m_A = 1000; // 没有用mutable则无法修改
     }
 
-    mutable int m_A;
+    int m_A;
     mutable int m_B;
+    mutable int m_C;
 };
 
 //const修饰对象  常对象
@@ -52,13 +53,15 @@ public:
 void test01()
 {
     const Person person;
-    cout << person.m_A << endl;
-    person.m_B = 10;
+    cout << person.m_A << endl; // 0
+    person.m_B = 10;  
     person.func();
-    cout << person.m_A << endl;
-    cout << person.m_B << endl;
+    cout << person.m_A << endl;  //0
+    cout << person.m_B << endl;  //10
     person.ShowPerson();
-    cout << person.m_B << endl;
+    cout << person.m_C << endl; //10
+    cout << person.m_B << endl; // 调用person.ShowPerson()后将m_B值从10修改该100
+
 }
 
 int main()
