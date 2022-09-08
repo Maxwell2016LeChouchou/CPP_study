@@ -1806,7 +1806,8 @@ public:
 private:
 	static int m_B; //静态成员变量也是有访问权限的
 };
-int Person::m_A = 10;
+int Person::m_A = 10;   // :: 的使用是如果想在类的外部引用静态成员函数，
+											//或在类的外部定义成员函数都要用到。使用命名空间里的类型或函数也 要用到
 int Person::m_B = 10;
 
 void test01()
@@ -3607,15 +3608,17 @@ int Son::m_A = 200;
 void test01()
 {
 	//通过对象访问
-	cout << "通过对象访问： " << endl;
+	cout << "通过对象访问： " << endl;  
+	Base b;
+	cout << "Base 下的 m_A = " << b.m_A << endl; // 100
 	Son s;
-	cout << "Son  下 m_A = " << s.m_A << endl;
-	cout << "Base 下 m_A = " << s.Base::m_A << endl;
+	cout << "Son  下 m_A = " << s.m_A << endl; // 200
+	cout << "Base 下 m_A = " << s.Base::m_A << endl;  // 100
 
 	//通过类名访问
 	cout << "通过类名访问： " << endl;
-	cout << "Son  下 m_A = " << Son::m_A << endl;
-	cout << "Base 下 m_A = " << Son::Base::m_A << endl;
+	cout << "Son  下 m_A = " << Son::m_A << endl; //200
+	cout << "Base 下 m_A = " << Son::Base::m_A << endl;  //1--
 }
 
 //同名成员函数
@@ -3762,7 +3765,7 @@ int main() {
 
 ​	两个派生类继承同一个基类
 
-​	又有某个类同时继承者两个派生类
+​	又有某个类同时继承着两个派生类
 
 ​	这种继承被称为菱形继承，或者钻石继承
 
@@ -3780,9 +3783,9 @@ int main() {
 
 
 
-1.     羊继承了动物的数据，驼同样继承了动物的数据，当草泥马使用数据时，就会产生二义性。
+1.   羊继承了动物的数据，驼同样继承了动物的数据，当草泥马使用数据时，就会产生二义性。
 
-2. 草泥马继承自动物的数据继承了两份，其实我们应该清楚，这份数据我们只需要一份就可以。
+2.   草泥马继承自动物的数据继承了两份，其实我们应该清楚，这份数据我们只需要一份就可以。
 
 
 
