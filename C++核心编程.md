@@ -4072,7 +4072,7 @@ public:
 void test02()
 {
 	//创建加法计算器
-	AbstractCalculator *abc = new AddCalculator;
+	AbstractCalculator *abc = new AddCalculator;  // 多态需要用到指针
 	abc->m_Num1 = 10;
 	abc->m_Num2 = 10;
 	cout << abc->m_Num1 << " + " << abc->m_Num2 << " = " << abc->getResult() << endl;
@@ -4192,16 +4192,6 @@ int main() {
 	return 0;
 }
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 
