@@ -4280,7 +4280,7 @@ public:
 
 //业务函数
 void DoWork(AbstractDrinking* drink) {
-	drink->MakeDrink();
+	drink->MakeDrink(); 
 	delete drink;
 }
 
@@ -4300,10 +4300,6 @@ int main() {
 	return 0;
 }
 ```
-
-
-
-
 
 
 
@@ -4392,12 +4388,12 @@ public:
 	}
 	virtual void Speak()
 	{
-		cout << *m_Name <<  "小猫在说话!" << endl;
+		cout << *m_Name <<  "小猫在说话!" << endl; // 堆区数据
 	}
 	~Cat()
 	{
 		cout << "Cat析构函数调用!" << endl;
-		if (this->m_Name != NULL) {
+		if (this->m_Name != NULL) { //指针不为空则需要在析构处销毁
 			delete m_Name;
 			m_Name = NULL;
 		}
@@ -4644,16 +4640,6 @@ void test01()
 
 }
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -76,6 +76,7 @@ public:
 //业务函数
 void DoWork(AbstractDrinking* drink) {
 	drink->MakeDrink();
+	cout <<"11111   " << drink << endl;  
 	delete drink;
 }
 
