@@ -12,7 +12,7 @@ template<class Type1, class Type2>
 class Person
 {
 public:
-    Person(Type1 m_name, Type2 m_age )
+    Person(Type1 name, Type2 age )
     {
         this->m_name = name;
         this->m_age = age;
@@ -23,18 +23,29 @@ public:
     }
 
 public:
-    Type1 name;
-    Type2 age;
+    Type1 m_name;
+    Type2 m_age;
 };
 
+
+template<class Type1, class Type2>
 class Offer
 {
 public:
-    Offer(Type1 m_job, Type2 m_location)
+    Offer(Type1 job, Type2 location)
     {
-        this
+        this-> m_job = job;
+        this->m_location = location;
     }
-}
+    void show2()
+    {
+        cout << "job title: " << this->m_job << " location: " << this->m_location << endl;
+    }
+
+    public: 
+        Type1 m_job;
+        Type2 m_location;
+};
 
 void test01()
 {
@@ -44,7 +55,7 @@ void test01()
 
 void test02()
 {
-    Person<string, string>P2("SDE", "Toronto");
+    Offer<string, string>P2("SDE", "Toronto");
     P2.show2();
 }
 
