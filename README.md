@@ -8,5 +8,5 @@
 
 本阶段主要针对C++==泛型编程==和==STL==技术做详细讲解，探讨C++更深层的使用
 
-# 主要学习内容是我在立德空间的同事给我的，所有的程序都经过本人（汪见舟/Jianzhou Wang)在mac和linux上练习，编译，运行。
+# 所有的程序都经过本人（汪见舟/Maxwell Jianzhou Wang)在mac和linux上练习，编译，运行。
 # Will translate into English soon
